@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <!-- Load TensorFlow.js from a
+         load balanced CDN server -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.13.3/dist/tf.min.js"></script>
+
+
+    <!-- Load TensorFlow.js locally.
+         If you want to use the library without an Internet access
+         just download tf.js/tf.min.js from the CDN address above
+         and put it into the current folder.
+
+         Note: you might want to use tf.js when you're developing your app
+               since errors are more readable, then use tf.min.js in production
+               for speed.
+    -->
+    <!-- <script src="tf.js"> </script> -->
+
+    <!-- Place your code in the script tag below. You can also use an external .js file -->
+    <script>
+    // Some simple test code to check
+    // if we have loaded the library.
+    var havetf='yes';
+    try {
+      tf;
+    } catch {
+      havetf='no';
+    }
+    </script>
+  </head>
+
+  <body>
+    <p id="hw"></p>
+    <script>
+     document.getElementById('hw').innerHTML='Tensorflow.js loaded? ' + havetf;
+    </script>
+  </body>
+</html>
