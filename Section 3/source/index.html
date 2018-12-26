@@ -1,0 +1,89 @@
+<!doctype html>
+<!--
+  You need to run a local HTTP server to make this app work, you can do that by
+  opening a terminal and going to the source directory for this section and running:
+  # For Python 3.X
+  python3 -m http.server
+  # For Python 2.x
+  python -m SimpleHTTPServer
+
+  Then you can access the app by opening Chrome and going to the http://localhost:8000
+  address.
+
+  We're using a pre trained emotion classification models from https://github.com/oarriaga/face_classification
+  converted for tf.js in https://github.com/brendansudol/faces
+-->
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src='tf.js'></script>
+    <!-- We're using an excellend API for face detection from
+        https://github.com/justadudewhohacks/face-api.js
+    -->
+    <script src="face-api.min.js"></script>
+    <script src="face_detection.js"></script>
+    <script src="emotion_detection.js"></script>
+    <script src="index.js"></script>
+  <style>
+  canvas {
+  }
+  #image {
+    height: 700px;
+  }
+  #first {
+    height: 700px;
+  }
+  </style>
+  <title>Photo Emotion Detector</title>
+  </head>
+  <body>
+   <div class="container">
+
+    <div class="row">
+       <div class="col-12">
+        <h1 class="display-4">(A simple) Photo Emotion Detector</h1>
+       </div>
+    </div>
+
+    <div id="first" class="row justify-content-center align-items-center">
+      <div class="col-8">
+        <canvas id="canvas"></canvas>
+      </div>
+      <div class="col-2">
+        <table class="table table-bordered" id="detected_emotions">
+        </table>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-8">
+        <div>Click to choose photo for detection:</div>
+        <a href="/emotions/19-s.jpg" class="load_url">1</a>
+        <a href="/emotions/9-s.jpg" class="load_url">2</a>
+        <a href="/emotions/15-ns.jpg" class="load_url">3</a>
+        <a href="/emotions/11-s.jpg" class="load_url">4</a>
+        <a href="/emotions/14-ns.jpg" class="load_url">5</a>
+        <a href="/emotions/21-ns-f.jpg" class="load_url">6</a>
+        <a href="/emotions/13-ns.jpg" class="load_url">7</a>
+        <a href="/emotions/17-s.jpg" class="load_url">8</a>
+        <a href="/emotions/18-s.jpg" class="load_url">9</a>
+        <a href="/emotions/3-ns.jpg" class="load_url">10</a>
+      </div>
+      <div class="col-4">
+        <div id="msg"></div>
+      </div>
+    </div>
+  </div>
+    <script>
+main()
+</script>
+</body>
+</html>
