@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Restaurant Finder</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md fixed-top">
+      <div class="progress" style="height:10px;width:100%">
+        <div id="status" class="progress-bar font-weight-light small" style="height:10px;width:1%"></div>
+      </div>
+    </nav>
+    <div class="container">
+     <div class="row text-center p-4">
+      <div class="col">
+       <h2 class="display-4">Find the best restaurant</h2>
+      </div>
+     </div>
+     <div class="row text-center p-4">
+      <div class="col">
+	<form>
+	  <div class="form-row">
+	    <div class="col">
+              <label for="what">What do you want to eat?</label>
+	      <input id="what" type="text" class="form-control" value="Pasta">
+	    </div>
+	    <div class="col">
+              <label for="where">Where?</label>
+	      <input id="where" type="text" class="form-control" value="San Francisco,CA">
+	    </div>
+
+	  </div>
+	</form>
+      </div>
+     </div>
+    <div class="row text-center p-4">
+     <div class="col">
+      <button id="search" type="submit" class="btn btn-primary" disabled>Let's go!</button>
+     </div>
+    </div>
+    <div class="row text-center p-4">
+     <div class="col">
+
+  <table id="reviews_container" class="table" style="visibility:hidden">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Review</th>
+        <th scope="col">Place</th>
+        <th scope="col">Positive?</th>
+      </tr>
+    </thead>
+    <tbody id="reviews">
+    </tbody>
+  </table>
+
+     </div>
+    </div>
+
+    </div>
+
+    <script src='tf.js'></script>
+    <script src='ui.js'></script>
+    <script src='loader.js'></script>
+    <script src='index.js'></script>
+
+
+  </body>
+</html>
